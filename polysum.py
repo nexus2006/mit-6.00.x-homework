@@ -14,12 +14,16 @@ as a float, rounded to 4 decimal places, eg:
 '''
 from math import tan, pi
 
+
 def polysum(num_sides, len_sides):
-    poly_sum = _poly_area(num_sides, len_sides) + _poly_perim_square(num_sides, len_sides)
+    poly_sum = _poly_area(num_sides, len_sides) + \
+               _poly_perim_square(num_sides, len_sides)
     return round(poly_sum, 4)
+
 
 def _poly_area(num_sides, len_sides):
     return (0.25*num_sides*len_sides**2)/tan(pi/num_sides)
+
 
 def _poly_perim_square(num_sides, len_sides):
     return (num_sides*len_sides)**2
@@ -28,3 +32,4 @@ if __name__ == '__main__':
     import doctest
     doctest.testmod()
     print('DONE')
+
